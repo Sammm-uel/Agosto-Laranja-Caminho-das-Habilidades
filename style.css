@@ -1,0 +1,27 @@
+body{
+    margin: 100px;
+    padding: 5px;
+    background-color: rgb(196, 224, 235);
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: "Gill Sans";
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+button{
+
+    color: rgb(91, 24, 24);
+}
+.Título{
+    color:rgb(0, 0, 0);
+    text-align: center;
+    font-family: "Lucida Sans";
+}
+.Texto1{
+    color:rgb(0, 0, 0);
+    text-align: center;
+    font-family: "Lucida Sans Regular"
+}
