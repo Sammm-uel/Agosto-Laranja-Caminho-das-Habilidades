@@ -118,12 +118,12 @@ function avaliarResposta(){
 
 ${pontos >= 70
 ? "Parabéns, você conseguiu uma ótima pontuação, continue assim!"
-: "Contiunue pesquisando e desenvolvendo novos projetos, você conseguirá na próxima!"
+: "Continue pesquisando e desenvolvendo novos projetos, você conseguirá na próxima!"
 
 }
 
     <button onclick="location.reload()">
-        Novo desafio!
+    Novo desafio!
     </button>
    `
 }
