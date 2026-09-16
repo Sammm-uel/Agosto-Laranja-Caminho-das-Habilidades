@@ -123,7 +123,7 @@ ${pontos >= 70
 }
 
     <button onclick="location.reload()">
-        Enviar a resposta.
+      Novo desafio.
     </button>
    `
 }
