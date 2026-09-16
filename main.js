@@ -1,87 +1,108 @@
-const desafios =[
-    "Resolver problemas lógicos", 
-    "Aprender funções novas", 
-    "Encontrar padrões", 
-    "Criar novas soluções", 
-    "Analisar erros"
+const desafios = [
+    "Resolver um problema lógico",
+    "Criar diferentes soluções",
+    "Aprender novas funções",
+    "Descobrir padrões",
+    "Pensar em uma nova invenção"
 ];
 
-function iniciarDesafio(){
-     const name = document.getElementById("name").value;
+function iniciarDesafio() {
 
-     if (name === ""){
-        alert("Digite seu nome antes de começar")
+    // Pega o nome digitado no HTML
+    const nome = document.getElementById("nome").value;
+
+    // Verifica se o aluno digitou o nome
+    if (nome === "") {
+        alert("Digite seu nome para começar!");
         return;
-     }
-}
 
-const numeros = Math.floor(Math.randon() * desafios.length);
+    const numeros = Math.floor(Math.randon() * desafios.length);
     const desafio = desafios[numeros];
 
     document.getElementById("resposta").innerHTML=`
-    <h2> Olá ${name}</h2>`
-    `<h2> Seu Desafio é: ${desafio}</h2>`
+    <h2> Olá ${name}</h2>
+    <h2> Seu Desafio é: </h2>
+    <h3> ${desafio} </h3>
 
-function avaliarResposta() {
+    <label for="resposta"> 
+    Qual o seu projeto para desenvolver este desafio? 
+    </label>
 
+    <br><br>
+
+     <textarea
+     id= "resposta"
+     rows = "5"
+     cols = "40"
+     placeholder = "Digite aqui sua resposta ..."
+     ></textarea>
+
+    <br><br>
+
+    <button onclick="avaliarResposta()">
+        Enviar a resposta.
+    </button>
+    `;
+   
+}
+
+function avaliarResposta(){
+
+    //Criar as constantes que preciso
     const nome = document.getElementById("nome").value;
     const resposta = document.getElementById("resposta").value;
+    const textoDesafio = document.getElementById("# resultado h3").innerHTML;
 
-    // Recupera o desafio que estava na tela
-    const desafioTexto = document.querySelector("#resultado h3").innerText;
 
-    // Verifica se existe resposta
     if (resposta.trim() === "") {
-        alert("Digite uma resposta antes de enviar!");
+        alert("Digite sua resposta para a avaliação!");
         return;
     }
 
     let pontos = 0;
 
-    // Critério 1:
-    // Resposta com 20 caracteres ou mais
-    if (resposta.length >= 20) {
+// critérios avaliação
+//Contagem de letras
+
+    if (resposta.length >= 30){
         pontos += 30;
     }
 
-    // Transforma a resposta em letras minúsculas
+//Incluir palavras chaves
+
     const texto = resposta.toLowerCase();
 
-    // Critério 2:
-    // Palavras relacionadas a estudo e desenvolvimento
-    if (
-        texto.includes("estudar") ||
-        texto.includes("praticar") ||
-        texto.includes("pesquisar")
-    ) {
-        pontos += 20;
+    if( texto.include("criar")||
+        texto.include("desenvolver")||
+        texto.include("elaborar") ){
+        pontos +=30;
     }
 
-    // Critério 3:
-    // Palavras relacionadas à criação e resolução
-    if (
-        texto.includes("criar") ||
-        texto.includes("resolver") ||
-        texto.includes("aprender")
-    ) {
-        pontos += 20;
+    if( texto.include("pesquisa")||
+        texto.include("estudo")||
+        texto.include("projeto") ){
+        pontos +=30;
     }
 
-    // Gera um tempo aleatório
-    const tempo = Math.floor(Math.random() * 10) + 1;
+   const tempo = Math.floor(Math.randon() * 10)+1;  
 
-    // Define o nível
-    let nivel;
+   let nivel;
 
-    if (pontos >= 70) {
-        nivel = "🏆 Inventor de Ideias";
-    } 
-    else if (pontos >= 50) {
-        nivel = "🚀 Criador";
-    } 
-    else if (pontos >= 30) {
-        nivel = "🧠 Desenvolvedor";
-    } 
-    else {
-        nivel = "🌱 Explorador";
+   if(pontos >=90){
+    nivel = "Invertor de idéias"
+   }
+
+   else if(pontos >=60){
+    nivel = "Desenvolvedor de idéias"
+   }
+
+   else if(pontos >=30){
+    nivel = "Explorador de idéias"
+   }
+
+  else{ 
+    nivel = "Pesquisador iniciante"
+   }
+}
+       
     }
