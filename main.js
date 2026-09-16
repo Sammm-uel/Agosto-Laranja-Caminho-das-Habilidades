@@ -15,34 +15,35 @@ function iniciarDesafio() {
     if (nome === "") {
         alert("Digite seu nome para começar!");
         return;
+    }
 
-    const numeros = Math.floor(Math.randon() * desafios.length);
+    const numeros = Math.floor(Math.random() * desafios.length);
     const desafio = desafios[numeros];
 
-    document.getElementById("resposta").innerHTML=`
-    <h2> Olá ${name}</h2>
-    <h2> Seu Desafio é: </h2>
-    <h3> ${desafio} </h3>
+    document.getElementById("resultado").innerHTML=`
+        <h2> Olá ${nome}</h2>
+        <h2> Seu Desafio é: </h2>
+        <h3> ${desafio} </h3>
 
-    <label for="resposta"> 
-    Qual o seu projeto para desenvolver este desafio? 
-    </label>
+        <label for="resposta"> 
+        Qual o seu projeto para desenvolver este desafio? 
+        </label>
 
-    <br><br>
+         <br><br>
 
-     <textarea
-     id= "resposta"
-     rows = "5"
-     cols = "40"
-     placeholder = "Digite aqui sua resposta ..."
-     ></textarea>
+         <textarea
+        id= "resposta"
+        rows = "5"
+        cols = "40"
+         placeholder = "Digite aqui sua resposta ..."
+        ></textarea>
 
-    <br><br>
+        <br><br>
 
-    <button onclick="avaliarResposta()">
+        <button onclick="avaliarResposta()">
         Enviar a resposta.
-    </button>
-    `;
+        </button>
+        `;
    
 }
 
@@ -51,7 +52,7 @@ function avaliarResposta(){
     //Criar as constantes que preciso
     const nome = document.getElementById("nome").value;
     const resposta = document.getElementById("resposta").value;
-    const textoDesafio = document.getElementById("# resultado h3").innerHTML;
+    const textoDesafio = document.querySelector("# resultado h3").innerText;
 
 
     if (resposta.trim() === "") {
@@ -72,37 +73,57 @@ function avaliarResposta(){
 
     const texto = resposta.toLowerCase();
 
-    if( texto.include("criar")||
-        texto.include("desenvolver")||
-        texto.include("elaborar") ){
+    if( texto.includes("criar")||
+        texto.includes("desenvolver")||
+        texto.includes("elaborar") ){
         pontos +=30;
     }
 
-    if( texto.include("pesquisa")||
-        texto.include("estudo")||
-        texto.include("projeto") ){
+    if( texto.includes("pesquisa")||
+        texto.includes("estudo")||
+        texto.includes("projeto") ){
         pontos +=30;
     }
 
-   const tempo = Math.floor(Math.randon() * 10)+1;  
+   const tempo = Math.floor(Math.random() * 10)+1;  
 
    let nivel;
 
    if(pontos >=90){
-    nivel = "Invertor de idéias"
+    nivel = "Invertor de idéias";
    }
 
    else if(pontos >=60){
-    nivel = "Desenvolvedor de idéias"
+    nivel = "Desenvolvedor de idéias";
    }
 
    else if(pontos >=30){
-    nivel = "Explorador de idéias"
+    nivel = "Explorador de idéias";
    }
 
   else{ 
-    nivel = "Pesquisador iniciante"
+    nivel = "Pesquisador iniciante";
    }
+
+   //Relatóri final 
+
+   document.getElementById("resultado").innerHTML =
+   `<h2> Caminho das Habilidades - Relatório</h2>
+   <p><strong> Participante: </strong> ${nome}</p>
+   <p><strong> Desafio: </strong> ${textoDesafio}</p>
+   <p><strong> Resposta: </strong> ${resposta}</p>
+   <p><strong> Pontuação: </strong> ${pontos}</p>
+   <p><strong> Nível: </strong> ${nivel}</p>
+   <p> O tempo de espera para o retorno da avaliação é ${tempo} dia(s)</p>
+
+${pontos >= 70
+? "Parabéns, você conseguiu uma ótima pontuação, continue assim!"
+: "Contunue pesquisando e desenvolvendo novos projetos, você consegurá na próxima!"
+
 }
-       
-    }
+
+    <button onclick="location.reload()">
+        Enviar a resposta.
+    </button>
+   `
+}
