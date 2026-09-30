@@ -15,7 +15,7 @@ button{
     color: rgb(91, 24, 24);
 }
 .Título{
-    color:rgb(0, 0, 0);
+    color: black;
     text-align: center;
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
@@ -30,4 +30,13 @@ button{
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
+}
+
+.container{
+    width: 100%;
+    background-color :beige;
+    text-align: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 25px;
 }
