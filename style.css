@@ -40,3 +40,10 @@ button{
     padding: 40px;
     border-radius: 25px;
 }
+
+label{
+    display: block;
+    margin: 20px;
+    font-weight: bolder;
+    
+}
