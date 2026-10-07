@@ -1,6 +1,6 @@
 *{
-    margin: 50px;
-    padding: 50px;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
@@ -28,7 +28,7 @@ button{
     background-color :beige;
     text-align: center;
     align-items: center;
-    padding: 40px;
+    padding: 50px;
     border-radius: 25px;
 }
 
