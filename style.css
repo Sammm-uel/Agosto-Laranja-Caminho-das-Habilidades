@@ -12,10 +12,10 @@ body{
 
 button{
 
-    color: rgb(91, 24, 24);
+    color: rgb(201, 17, 17);
 }
 .Título{
-    color: black;
+    color: rgb(19, 17, 177, 0.582);
     text-align: center;
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
@@ -24,7 +24,7 @@ button{
 }
 
 .Texto1{
-    color:rgb(0, 0, 0);
+    color:rgb(31, 199, 73);
     text-align: center;
     font-family: "Google Sans", sans-serif;
     font-optical-sizing: auto;
