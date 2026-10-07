@@ -23,12 +23,12 @@ button{
 }
 
 .container{
-    width: 100%;
-    max-width: 300px;
+    width: 90%;
+    max-width: 600px;
     background-color :beige;
     text-align: center;
     align-items: center;
-    padding: 50px;
+    padding: 40px;
     border-radius: 25px;
 }
 
