@@ -105,3 +105,8 @@ button{
     transition: 0.3s;
     margin-top: 10px;
  }
+
+#resultado p{
+    line-height: 2.0;
+    margin: 10px, 0px;
+}
