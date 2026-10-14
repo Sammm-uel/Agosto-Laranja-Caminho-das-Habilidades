@@ -17,13 +17,13 @@ body{
     justify-content: center;
 }
 
-.container{
+.container {
     width: 100%;
-    max-width: 650px;
-    background-color :beige;
+    max-width: 750px;
+    background-color: beige;
     text-align: center;
     align-items: center;
-    padding: 40px;
+    padding: 40px 20px;
     border-radius: 25px;
 }
 
